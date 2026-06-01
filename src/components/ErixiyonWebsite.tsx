@@ -1,7 +1,6 @@
 import { Contact } from "./Contact";
 import { Footer } from "./Footer";
 import { HowWeWork } from "./HowWeWork";
-import { Insights } from "./Insights";
 import { LandingPage } from "./LandingPage";
 import { Navbar } from "./Navbar";
 import { OurStory } from "./OurStory";
@@ -10,17 +9,23 @@ import { Services } from "./Services";
 
 export default function EryxionWebsite() {
   return (
-    <div className="min-h-screen bg-[#050816] text-white">
-      {/* Background */}
+    <div className="min-h-screen bg-[#050505] text-white">
+      {/* Premium Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-[-10%] top-[-10%] h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[120px]" />
+        {/* Gold Glow Top Left */}
+        <div className="absolute left-[-10%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[#D4AF37]/10 blur-[180px]" />
 
-        <div className="absolute bottom-[-10%] right-[-10%] h-[380px] w-[380px] rounded-full bg-violet-500/10 blur-[120px]" />
+        {/* Gold Glow Bottom Right */}
+        <div className="absolute bottom-[-10%] right-[-10%] h-[450px] w-[450px] rounded-full bg-[#D4AF37]/8 blur-[180px]" />
 
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px]" />
+        {/* Subtle Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,175,55,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
+
+        {/* Premium Radial Overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_85%)]" />
       </div>
 
-      {/* Navbar */}
+      {/* Navigation */}
       <Navbar />
 
       {/* Hero */}
@@ -29,17 +34,14 @@ export default function EryxionWebsite() {
       {/* Services */}
       <Services />
 
-      {/* Our Story */}
+      {/* About */}
       <OurStory />
 
       {/* Portfolio */}
       <Portfolio />
 
-      {/* How We Work */}
+      {/* Process */}
       <HowWeWork />
-
-      {/* Insights */}
-      <Insights />
 
       {/* Contact */}
       <Contact />

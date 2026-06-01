@@ -4,6 +4,7 @@ import { useRef } from "react";
 export const Insights = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px" });
+
   const insights = [
     {
       title: "How Intelligent Automation Multiplies Operational Efficiency",
@@ -18,72 +19,86 @@ export const Insights = () => {
       category: "Analytics",
     },
   ];
+
   return (
     <motion.section
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      id="insights"
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 0.7 }}
       className="relative mx-auto max-w-7xl px-6 py-24"
     >
-      {/* Glow */}
-      <div className="absolute left-0 top-20 -z-10 h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-[120px]" />
+      {/* Gold Glow */}
+      <div className="absolute left-0 top-0 -z-10 h-[400px] w-[400px] rounded-full bg-[#D4AF37]/10 blur-[160px]" />
 
       {/* Header */}
       <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.35em] text-cyan-300">
+          <p className="text-xs uppercase tracking-[0.35em] text-[#D4AF37]">
             Insights
           </p>
 
-          <h2 className="mt-5 text-5xl font-black leading-[0.95] tracking-tight">
-            Intelligence
-            <br />& Perspectives.
+          <h2 className="mt-5 text-5xl font-black leading-tight md:text-5xl">
+            Intelligence &
+            <br />
+            Perspectives.
           </h2>
 
-          <p className="mt-6 max-w-2xl text-[15px] leading-8 text-white/45">
-            Strategic frameworks, digital intelligence, and actionable insights
-            for businesses navigating modern growth.
+          <p className="mt-6 max-w-2xl text-sm leading-8 text-white/60">
+            Strategic frameworks, digital intelligence, and actionable
+            insights designed to help ambitious businesses scale with
+            confidence.
           </p>
         </div>
 
-        <button className="w-fit rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-medium text-white/75 transition duration-300 hover:border-cyan-400/20 hover:bg-white/[0.06] hover:text-white">
+        <button className="w-fit rounded-full border border-[#D4AF37]/15 bg-[#111111] px-6 py-3 text-sm font-medium text-[#D4AF37] transition-all duration-300 hover:border-[#D4AF37]/40 hover:bg-[#161616]">
           View All Articles
         </button>
       </div>
 
       {/* Articles */}
-      <div className="mt-16 grid gap-6 lg:grid-cols-3">
+      <div className="mt-16 grid items-stretch gap-6 lg:grid-cols-3">
         {insights.map((item, index) => (
           <div
             key={item.title}
-            className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] p-7 transition duration-500 hover:-translate-y-1 hover:border-cyan-400/20 hover:bg-white/[0.05]"
+            className="group relative flex h-full flex-col overflow-hidden rounded-[30px] border border-[#D4AF37]/10 bg-[#111111] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/25 hover:shadow-[0_0_30px_rgba(212,175,55,0.08)]"
           >
-            {/* Hover Glow */}
-            <div className="absolute right-0 top-0 h-32 w-32 bg-cyan-500/0 blur-3xl transition duration-500 group-hover:bg-cyan-500/10" />
-
-            {/* Number */}
-            <div className="absolute right-6 top-6 text-5xl font-black text-white/[0.04]">
+            {/* Large Background Number */}
+            <div className="absolute right-5 top-4 text-7xl font-black text-[#D4AF37]/10">
               0{index + 1}
             </div>
 
             {/* Category */}
-            <p className="relative z-10 text-xs uppercase tracking-[0.35em] text-cyan-300">
+            <p className="relative z-10 text-xs uppercase tracking-[0.35em] text-[#D4AF37]">
               {item.category}
             </p>
 
-            {/* Title */}
-            <h3 className="relative z-10 mt-6 text-[26px] font-black leading-[1.25] tracking-tight text-white transition duration-300 group-hover:text-cyan-100">
-              {item.title}
-            </h3>
+            {/* Content */}
+            <div className="mt-6 flex flex-1 flex-col">
+              <h3 className="text-2xl font-black leading-tight">
+                {item.title}
+              </h3>
 
-            {/* Bottom */}
-            <div className="relative z-10 mt-10 flex items-center justify-between border-t border-white/10 pt-5">
-              <p className="text-sm text-white/35">Read Article</p>
+              <p className="mt-5 text-sm leading-8 text-white/60">
+                Discover practical strategies, proven frameworks, and
+                data-driven approaches used by high-growth businesses.
+              </p>
+            </div>
 
-              <button className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/60 transition duration-300 group-hover:border-cyan-400/20 group-hover:text-cyan-300">
-                →
-              </button>
+            {/* Footer */}
+            <div className="mt-auto pt-8">
+              <div className="mb-5 h-px w-full bg-gradient-to-r from-[#D4AF37]/40 to-transparent" />
+
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-white/50">
+                  Read Article
+                </span>
+
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D4AF37]/15 text-[#D4AF37] transition duration-300 group-hover:border-[#D4AF37]/40">
+                  →
+                </div>
+              </div>
             </div>
           </div>
         ))}

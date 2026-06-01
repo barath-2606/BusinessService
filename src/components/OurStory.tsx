@@ -4,98 +4,123 @@ import { useRef } from "react";
 export const OurStory = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px" });
+
   return (
     <motion.section
       ref={ref}
       id="story"
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
       className="relative mx-auto max-w-7xl px-6 py-24"
     >
-      {/* Glow */}
-      <div className="absolute left-1/2 top-0 -z-10 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
+      {/* Luxury Glow */}
+      <div className="absolute left-1/2 top-0 -z-10 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[160px]" />
 
-      <div className="grid items-start gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-        {/* Left Side */}
+      <div className="grid items-start gap-16 lg:grid-cols-[0.9fr_1.1fr]">
+        {/* LEFT */}
         <div className="lg:sticky lg:top-28">
-          <p className="text-xs uppercase tracking-[0.35em] text-cyan-300">
+          <p className="text-xs uppercase tracking-[0.35em] text-[#D4AF37]">
             Our Story
           </p>
 
-          <h2 className="mt-5 text-5xl font-black leading-[0.95] tracking-tight">
-            Built to Elevate.
+          <h2 className="mt-5 text-5xl font-black leading-[0.95] tracking-tight md:text-5xl">
+            Where Strategy
             <br />
-            Engineered to Scale.
+            Meets Excellence.
           </h2>
 
-          <div className="mt-8 h-px w-24 bg-gradient-to-r from-cyan-400 to-transparent" />
+          <div className="mt-8 h-px w-24 bg-gradient-to-r from-[#D4AF37] to-transparent" />
         </div>
 
-        {/* Right Side */}
+        {/* RIGHT */}
         <div>
-          {/* Main Content */}
-          <div className="rounded-[34px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl lg:p-10">
-            <p className="text-[16px] leading-8 text-white/65">
-              Eryxion was founded on a singular conviction: that every ambitious
-              business deserves enterprise-grade digital intelligence,
-              regardless of its stage. We are not a commodity agency — we are
-              architects of long-term digital growth.
+          {/* Main Story Card */}
+          <div className="rounded-[34px] border border-[#D4AF37]/10 bg-[#111111] p-8 lg:p-10">
+            <p className="text-[16px] leading-8 text-white/75">
+              Eryxion was founded with a simple belief: exceptional businesses
+              deserve exceptional digital systems. We exist to bridge the gap
+              between ambition and execution by combining strategic insight,
+              cutting-edge technology, and measurable business outcomes.
             </p>
 
-            <p className="mt-7 text-[16px] leading-8 text-white/55">
-              We combine deep strategic thinking with relentless execution —
-              merging marketing science, automation engineering, creative
-              excellence, and business intelligence into cohesive, scalable
-              systems that compound value over time.
+            <p className="mt-7 text-[16px] leading-8 text-white/60">
+              Rather than delivering isolated services, we architect complete
+              growth ecosystems. Every website, automation workflow, marketing
+              strategy, and analytics framework is designed to work together,
+              creating sustainable momentum that compounds over time.
             </p>
+
+            <div className="mt-8 border-t border-[#D4AF37]/10 pt-8">
+              <div className="grid grid-cols-3 gap-6">
+                <div>
+                  <h3 className="text-3xl font-black text-[#D4AF37]">120+</h3>
+                  <p className="mt-2 text-xs uppercase tracking-[0.15em] text-white/40">
+                    Projects
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl font-black text-[#D4AF37]">98%</h3>
+                  <p className="mt-2 text-xs uppercase tracking-[0.15em] text-white/40">
+                    Retention
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl font-black text-[#D4AF37]">24/7</h3>
+                  <p className="mt-2 text-xs uppercase tracking-[0.15em] text-white/40">
+                    Support
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Principles */}
+          {/* Values */}
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {/* Card */}
-            <div className="group rounded-[28px] border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:border-cyan-400/20 hover:bg-white/[0.05]">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-300">
+            <div className="group rounded-[28px] border border-[#D4AF37]/10 bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/30 hover:shadow-[0_0_30px_rgba(212,175,55,0.08)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/10 bg-[#D4AF37]/5 text-[#D4AF37]">
                 ✦
               </div>
 
               <h3 className="mt-6 text-lg font-bold">
-                Integrity-First Approach
+                Strategic Thinking
               </h3>
 
-              <p className="mt-4 text-sm leading-7 text-white/45">
-                Every recommendation is grounded in data, transparency, and your
-                best commercial interest.
+              <p className="mt-4 text-sm leading-7 text-white/55">
+                Every decision is guided by long-term business objectives rather
+                than short-term trends.
               </p>
             </div>
 
-            {/* Card */}
-            <div className="group rounded-[28px] border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:border-cyan-400/20 hover:bg-white/[0.05]">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-300">
+            <div className="group rounded-[28px] border border-[#D4AF37]/10 bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/30 hover:shadow-[0_0_30px_rgba(212,175,55,0.08)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/10 bg-[#D4AF37]/5 text-[#D4AF37]">
                 ✦
               </div>
 
               <h3 className="mt-6 text-lg font-bold">
-                Outcome-Driven Execution
+                Precision Execution
               </h3>
 
-              <p className="mt-4 text-sm leading-7 text-white/45">
-                We measure success by your business results — revenue, reach,
-                retention, and return on investment.
+              <p className="mt-4 text-sm leading-7 text-white/55">
+                From design to deployment, every detail is crafted with
+                excellence and consistency.
               </p>
             </div>
 
-            {/* Card */}
-            <div className="group rounded-[28px] border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:border-cyan-400/20 hover:bg-white/[0.05]">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-300">
+            <div className="group rounded-[28px] border border-[#D4AF37]/10 bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/30 hover:shadow-[0_0_30px_rgba(212,175,55,0.08)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/10 bg-[#D4AF37]/5 text-[#D4AF37]">
                 ✦
               </div>
 
-              <h3 className="mt-6 text-lg font-bold">Always-On Partnership</h3>
+              <h3 className="mt-6 text-lg font-bold">
+                Enduring Partnerships
+              </h3>
 
-              <p className="mt-4 text-sm leading-7 text-white/45">
-                We function as an extension of your team, providing ongoing
-                support, insights, and strategic guidance.
+              <p className="mt-4 text-sm leading-7 text-white/55">
+                We operate as a trusted extension of your team, invested in your
+                long-term success.
               </p>
             </div>
           </div>

@@ -4,105 +4,93 @@ import { useRef } from "react";
 export const HowWeWork = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px" });
-    return (
-        <motion.section
-            ref={ref}
-            id="process"
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative mx-auto max-w-7xl px-6 py-24"
-        >
-        {/* Background Glow */}
-        <div className="absolute left-1/2 top-20 -z-10 h-[380px] w-[380px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px]" />
 
-        {/* Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs uppercase tracking-[0.35em] text-cyan-300">
-            How We Work
-          </p>
+  const steps = [
+    {
+      number: "01",
+      title: "Discovery",
+      desc: "We analyse your business, audience, competitors, and digital ecosystem to uncover opportunities and define priorities.",
+    },
+    {
+      number: "02",
+      title: "Strategy",
+      desc: "A tailored roadmap is created by combining technology, marketing, automation, and business intelligence into one scalable growth system.",
+    },
+    {
+      number: "03",
+      title: "Execution",
+      desc: "Our team builds, launches, and optimises digital systems with precision, ensuring quality, consistency, and measurable outcomes.",
+    },
+    {
+      number: "04",
+      title: "Optimisation",
+      desc: "Continuous analysis and refinement ensure sustainable growth, improved performance, and long-term business success.",
+    },
+  ];
 
-          <h2 className="mt-5 text-5xl font-black leading-[0.95] tracking-tight">
-            Our Proven Process
-          </h2>
+  return (
+    <motion.section
+      ref={ref}
+      id="process"
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 0.7 }}
+      className="relative mx-auto max-w-7xl px-6 py-24"
+    >
+      {/* Gold Glow */}
+      <div className="absolute left-1/2 top-0 -z-10 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[180px]" />
 
-          <p className="mt-6 text-[15px] leading-8 text-white/45">
-            A disciplined four-stage methodology that transforms ambition into
-            measurable, scalable results.
-          </p>
-        </div>
+      {/* Header */}
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-xs uppercase tracking-[0.35em] text-[#D4AF37]">
+          How We Work
+        </p>
 
-        {/* Process Timeline */}
-        <div className="relative mt-20">
-          {/* Center Line */}
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-cyan-400/30 via-white/10 to-transparent lg:block" />
+        <h2 className="mt-5 text-5xl font-black leading-tight md:text-5xl">
+          A Refined Process.
+          <br />
+          Exceptional Results.
+        </h2>
 
-          <div className="space-y-10">
-            {[
-              {
-                number: "01",
-                title: "Discovery",
-                desc: "We conduct deep-dive audits of your business, market landscape, competitors, and digital presence to establish a precise baseline and identify leverage opportunities.",
-              },
-              {
-                number: "02",
-                title: "Strategy",
-                desc: "We architect a bespoke growth blueprint — integrating marketing, automation, analytics, and consulting into a cohesive, prioritised roadmap aligned to your goals.",
-              },
-              {
-                number: "03",
-                title: "Execution",
-                desc: "Our specialist teams deploy campaigns, build systems, launch automations, and create assets with meticulous precision, hitting deadlines and quality benchmarks.",
-              },
-              {
-                number: "04",
-                title: "Optimisation",
-                desc: "We continuously analyse performance data, refine strategies, scale what works, and pivot what doesn't — ensuring compounding growth over the long term.",
-              },
-            ].map((step, index) => (
-              <div
-                key={step.number}
-                className={`grid items-center gap-6 lg:grid-cols-2 ${
-                  index % 2 !== 0 ? "lg:[&>*:first-child]:order-2" : ""
-                }`}
-              >
-                {/* Empty Side */}
-                <div className="hidden lg:block" />
+        <p className="mt-6 text-sm leading-8 text-white/60">
+          Every engagement follows a structured methodology designed to
+          transform vision into measurable business outcomes.
+        </p>
+      </div>
 
-                {/* Card */}
-                <div className="relative">
-                  {/* Timeline Dot */}
-                  <div className="absolute left-[-62px] top-10 hidden h-5 w-5 rounded-full border border-cyan-400/40 bg-[#050816] shadow-[0_0_30px_rgba(34,211,238,0.3)] lg:block" />
+      {/* Process Cards */}
+      <div className="mt-20 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {steps.map((step) => (
+          <div
+            key={step.number}
+            className="group relative flex h-full flex-col overflow-hidden rounded-[30px] border border-[#D4AF37]/10 bg-[#111111] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/25 hover:shadow-[0_0_30px_rgba(212,175,55,0.08)]"
+          >
+            {/* Large Background Number */}
+            <div className="absolute right-5 top-4 text-7xl font-black text-[#D4AF37]/10">
+              {step.number}
+            </div>
 
-                  <div className="group relative overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03] p-8 transition duration-500 hover:border-cyan-400/20 hover:bg-white/[0.05]">
-                    {/* Hover Glow */}
-                    <div className="absolute right-0 top-0 h-40 w-40 bg-cyan-500/0 blur-3xl transition duration-500 group-hover:bg-cyan-500/10" />
+            {/* Small Badge */}
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/15 bg-[#D4AF37]/5 text-sm font-semibold text-[#D4AF37]">
+              {step.number}
+            </div>
 
-                    {/* Number */}
-                    <div className="absolute right-7 top-6 text-6xl font-black text-white/[0.04]">
-                      {step.number}
-                    </div>
+            {/* Content */}
+            <div className="mt-6 flex flex-1 flex-col">
+              <h3 className="text-2xl font-black">{step.title}</h3>
 
-                    {/* Content */}
-                    <div className="relative z-10">
-                      <p className="text-xs uppercase tracking-[0.35em] text-cyan-300">
-                        Step {step.number}
-                      </p>
+              <p className="mt-5 text-sm leading-8 text-white/60">
+                {step.desc}
+              </p>
+            </div>
 
-                      <h3 className="mt-5 text-3xl font-black tracking-tight">
-                        {step.title}
-                      </h3>
-
-                      <p className="mt-6 text-[15px] leading-8 text-white/45">
-                        {step.desc}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+            {/* Bottom Divider */}
+            <div className="mt-auto pt-8">
+              <div className="h-px w-full bg-gradient-to-r from-[#D4AF37]/50 to-transparent" />
+            </div>
           </div>
-        </div>
-      </motion.section>
-    )
-}
+        ))}
+      </div>
+    </motion.section>
+  );
+};
