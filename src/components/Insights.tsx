@@ -1,4 +1,9 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export const Insights = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px" });
   const insights = [
     {
       title: "How Intelligent Automation Multiplies Operational Efficiency",
@@ -14,7 +19,13 @@ export const Insights = () => {
     },
   ];
   return (
-    <section className="relative mx-auto max-w-7xl px-6 py-24">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative mx-auto max-w-7xl px-6 py-24"
+    >
       {/* Glow */}
       <div className="absolute left-0 top-20 -z-10 h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-[120px]" />
 
@@ -77,6 +88,6 @@ export const Insights = () => {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };

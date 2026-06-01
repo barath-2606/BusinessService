@@ -1,6 +1,18 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export const LandingPage = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px" });
+
   return (
-    <section className="relative overflow-hidden">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative overflow-hidden"
+    >
       <div className="mx-auto grid min-h-[88vh] max-w-[1180px] items-center gap-10 px-6 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-20">
         {/* Left */}
         <div className="relative z-10">
@@ -136,6 +148,6 @@ export const LandingPage = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

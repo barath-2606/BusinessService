@@ -1,6 +1,17 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export const Footer = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px" });
   return (
-    <footer className="border-t border-white/10">
+    <motion.footer
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="border-t border-white/10"
+    >
       <div className="mx-auto flex max-w-[1180px] flex-col gap-8 px-6 py-8 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <h2 className="text-xl font-black tracking-[0.35em] uppercase">
@@ -18,6 +29,6 @@ export const Footer = () => {
           <a href="#">Twitter</a>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };

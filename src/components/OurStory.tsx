@@ -1,12 +1,24 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export const OurStory = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px" });
   return (
-    <section id="story" className="relative mx-auto max-w-7xl px-6 py-24">
+    <motion.section
+      ref={ref}
+      id="story"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative mx-auto max-w-7xl px-6 py-24"
+    >
       {/* Glow */}
       <div className="absolute left-1/2 top-0 -z-10 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
 
       <div className="grid items-start gap-14 lg:grid-cols-[0.9fr_1.1fr]">
         {/* Left Side */}
-        <div className="sticky top-28">
+        <div className="lg:sticky lg:top-28">
           <p className="text-xs uppercase tracking-[0.35em] text-cyan-300">
             Our Story
           </p>
@@ -89,6 +101,6 @@ export const OurStory = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

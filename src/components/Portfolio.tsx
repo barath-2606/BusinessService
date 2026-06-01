@@ -1,4 +1,9 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export const Portfolio = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px" });
   const portfolio = [
     {
       title: "Luxury Real Estate Platform",
@@ -20,7 +25,14 @@ export const Portfolio = () => {
     },
   ];
   return (
-    <section id="portfolio" className="relative mx-auto max-w-7xl px-6 py-24">
+    <motion.section
+      ref={ref}
+      id="portfolio"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative mx-auto max-w-7xl px-6 py-24"
+    >
       {/* Background Glow */}
       <div className="absolute right-0 top-20 -z-10 h-[320px] w-[320px] rounded-full bg-violet-500/10 blur-[120px]" />
 
@@ -113,6 +125,6 @@ export const Portfolio = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
