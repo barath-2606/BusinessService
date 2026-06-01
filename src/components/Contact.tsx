@@ -1,7 +1,16 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export const Contact = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px" });
   return (
-    <section
+    <motion.section
+      ref={ref}
       id="contact"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="mx-auto max-w-[1180px] px-6 py-16 lg:py-24"
     >
       <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-cyan-500/10 via-white/[0.03] to-violet-500/10 p-8 shadow-[0_10px_40px_rgba(0,0,0,0.18)] lg:p-10">
@@ -30,6 +39,6 @@ export const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

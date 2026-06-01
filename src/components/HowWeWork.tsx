@@ -1,6 +1,18 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export const HowWeWork = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px" });
     return (
-        <section id="process" className="relative mx-auto max-w-7xl px-6 py-24">
+        <motion.section
+            ref={ref}
+            id="process"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative mx-auto max-w-7xl px-6 py-24"
+        >
         {/* Background Glow */}
         <div className="absolute left-1/2 top-20 -z-10 h-[380px] w-[380px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px]" />
 
@@ -91,6 +103,6 @@ export const HowWeWork = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
     )
 }

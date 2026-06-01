@@ -1,4 +1,9 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export const Services = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px" });
   const services = [
     "Digital Marketing",
     "Analytics & Intelligence",
@@ -8,8 +13,12 @@ export const Services = () => {
     "Business Consulting",
   ];
   return (
-    <section
+    <motion.section
+      ref={ref}
       id="services"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="mx-auto max-w-[1180px] px-6 py-16 lg:py-24"
     >
       <div className="relative z-10 max-w-2xl">
@@ -43,6 +52,6 @@ export const Services = () => {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
