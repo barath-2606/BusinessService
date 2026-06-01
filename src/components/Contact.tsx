@@ -4,36 +4,77 @@ import { useRef } from "react";
 export const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px" });
+
   return (
     <motion.section
       ref={ref}
       id="contact"
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="mx-auto max-w-[1180px] px-6 py-16 lg:py-24"
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 0.7 }}
+      className="relative mx-auto max-w-7xl px-6 py-24"
     >
-      <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-cyan-500/10 via-white/[0.03] to-violet-500/10 p-8 shadow-[0_10px_40px_rgba(0,0,0,0.18)] lg:p-10">
-        <div className="max-w-xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-300">
+      {/* Gold Glow */}
+      <div className="absolute left-1/2 top-0 -z-10 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[180px]" />
+
+      <div className="overflow-hidden rounded-[36px] border border-[#D4AF37]/10 bg-[#111111] p-10 lg:p-16">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs uppercase tracking-[0.35em] text-[#D4AF37]">
             Get In Touch
           </p>
 
-          <h2 className="mt-4 text-[36px] font-black leading-tight">
-            Let’s Build Something Exceptional.
+          <h2 className="mt-6 text-4xl font-black leading-tight md:text-5xl">
+            Let's Build Something
+            <br />
+            Exceptional Together.
           </h2>
 
-          <p className="mt-5 text-sm leading-7 text-white/50">
-            Partner with Eryxion to engineer premium digital systems that
-            accelerate growth and elevate your brand.
+          <p className="mx-auto mt-8 max-w-2xl text-sm leading-8 text-white/60">
+            Whether you're launching a new venture, scaling an existing
+            business, or transforming your digital presence, Eryxion is ready
+            to help you achieve measurable growth.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:scale-105">
+          {/* Contact Cards */}
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            <div className="rounded-[24px] border border-[#D4AF37]/10 bg-black/30 p-6">
+              <p className="text-xs uppercase tracking-[0.25em] text-[#D4AF37]">
+                Email
+              </p>
+
+              <p className="mt-4 text-white/80">
+                hello@eryxion.com
+              </p>
+            </div>
+
+            <div className="rounded-[24px] border border-[#D4AF37]/10 bg-black/30 p-6">
+              <p className="text-xs uppercase tracking-[0.25em] text-[#D4AF37]">
+                Phone
+              </p>
+
+              <p className="mt-4 text-white/80">
+                +91 XXXXX XXXXX
+              </p>
+            </div>
+
+            <div className="rounded-[24px] border border-[#D4AF37]/10 bg-black/30 p-6">
+              <p className="text-xs uppercase tracking-[0.25em] text-[#D4AF37]">
+                Location
+              </p>
+
+              <p className="mt-4 text-white/80">
+                Tamil Nadu, India
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <button className="rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:scale-105">
               Schedule Consultation
             </button>
 
-            <button className="rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-sm transition hover:bg-white/[0.06]">
+            <button className="rounded-full border border-[#D4AF37]/20 bg-transparent px-8 py-4 text-sm font-medium text-[#D4AF37] transition-all duration-300 hover:border-[#D4AF37]/50">
               hello@eryxion.com
             </button>
           </div>

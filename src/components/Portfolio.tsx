@@ -4,122 +4,126 @@ import { useRef } from "react";
 export const Portfolio = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px" });
+
   const portfolio = [
     {
       title: "Luxury Real Estate Platform",
       category: "Web Development",
+      result: "+240% Lead Growth",
+      description:
+        "A premium real estate platform engineered to generate qualified leads and deliver exceptional customer experiences.",
       image:
-        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop",
     },
     {
-      title: "AI Analytics Dashboard",
+      title: "Executive AI Dashboard",
       category: "Analytics & Intelligence",
+      result: "4.8x ROI",
+      description:
+        "Real-time executive dashboard delivering actionable business intelligence.",
       image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
     },
     {
-      title: "Premium Fashion Campaign",
+      title: "Premium Brand Campaign",
       category: "Digital Marketing",
+      result: "+180% Engagement",
+      description:
+        "Strategic campaigns focused on visibility, engagement, and growth.",
       image:
-        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
     },
   ];
+
   return (
     <motion.section
       ref={ref}
       id="portfolio"
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 0.7 }}
       className="relative mx-auto max-w-7xl px-6 py-24"
     >
-      {/* Background Glow */}
-      <div className="absolute right-0 top-20 -z-10 h-[320px] w-[320px] rounded-full bg-violet-500/10 blur-[120px]" />
+      {/* Gold Glow */}
+      <div className="absolute right-0 top-0 -z-10 h-[350px] w-[350px] rounded-full bg-[#D4AF37]/10 blur-[140px]" />
 
       {/* Header */}
-      <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.35em] text-cyan-300">
-            Portfolio
-          </p>
+      <div className="mb-14">
+        <p className="text-xs uppercase tracking-[0.35em] text-[#D4AF37]">
+          Portfolio
+        </p>
 
-          <h2 className="mt-5 text-5xl font-black leading-[0.95] tracking-tight">
-            Selected Work
-            <br />& Case Studies.
-          </h2>
-        </div>
+        <h2 className="mt-4 text-4xl font-black leading-tight md:text-5xl">
+          Selected Work &
+          <br />
+          Success Stories
+        </h2>
+
+        <p className="mt-6 max-w-2xl text-sm leading-8 text-white/60">
+          Premium digital solutions designed to create measurable business
+          growth and long-term value.
+        </p>
       </div>
 
-      {/* Portfolio Grid */}
-      <div className="mt-16 grid gap-6 lg:grid-cols-12">
-        {/* Large Featured Card */}
-        <div className="group relative overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03] lg:col-span-6">
-          {/* Image */}
-          <div className="relative overflow-hidden">
-            <img
-              src={portfolio[0].image}
-              alt={portfolio[0].title}
-              className="h-[520px] w-full object-cover transition duration-700 group-hover:scale-105"
-            />
+      <div className="grid gap-6 lg:grid-cols-12">
+        {/* Featured Project */}
+        <div className="group relative overflow-hidden rounded-[32px] border border-[#D4AF37]/10 bg-[#111111] lg:col-span-7">
+          <img
+            src={portfolio[0].image}
+            alt={portfolio[0].title}
+            className="h-[420px] w-full object-cover transition duration-700 group-hover:scale-105"
+          />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/20 to-transparent" />
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-          {/* Content */}
-          <div className="absolute bottom-0 left-0 w-full p-8">
-            <p className="text-xs uppercase tracking-[0.35em] text-cyan-300">
+          <div className="absolute bottom-0 left-0 p-8">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#D4AF37]">
               {portfolio[0].category}
             </p>
 
-            <h3 className="mt-4 max-w-md text-3xl font-black leading-tight">
+            <h3 className="mt-3 text-3xl font-black">
               {portfolio[0].title}
             </h3>
 
-            <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/70 transition hover:text-cyan-300">
-              View Case Study
-              <span>→</span>
-            </button>
+            <div className="mt-3 text-4xl font-black text-[#D4AF37]">
+              {portfolio[0].result}
+            </div>
+
+            <p className="mt-4 max-w-lg text-sm leading-7 text-white/75">
+              {portfolio[0].description}
+            </p>
           </div>
         </div>
 
-        {/* Right Side */}
-        <div className="grid gap-6 lg:col-span-6">
+        {/* Secondary Projects */}
+        <div className="space-y-6 lg:col-span-5">
           {portfolio.slice(1).map((item) => (
             <div
               key={item.title}
-              className="group grid overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] transition duration-300 hover:border-cyan-400/20 hover:bg-white/[0.05] md:grid-cols-[0.9fr_1.1fr]"
+              className="overflow-hidden rounded-[28px] border border-[#D4AF37]/10 bg-[#111111] transition hover:border-[#D4AF37]/30"
             >
-              {/* Image */}
-              <div className="overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="h-full min-h-[240px] w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-              </div>
+              <img
+                src={item.image}
+                alt={item.title}
+                className="h-[180px] w-full object-cover"
+              />
 
-              {/* Content */}
-              <div className="flex flex-col justify-between p-7">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-cyan-300">
-                    {item.category}
-                  </p>
+              <div className="p-6">
+                <p className="text-xs uppercase tracking-[0.3em] text-[#D4AF37]">
+                  {item.category}
+                </p>
 
-                  <h3 className="mt-4 text-2xl font-black leading-tight">
-                    {item.title}
-                  </h3>
+                <h3 className="mt-3 text-xl font-bold">
+                  {item.title}
+                </h3>
 
-                  <p className="mt-5 text-sm leading-7 text-white/45">
-                    Premium execution focused on performance, scalability, and
-                    long-term business growth.
-                  </p>
+                <div className="mt-3 text-2xl font-black text-[#D4AF37]">
+                  {item.result}
                 </div>
 
-                <button className="mt-8 flex items-center gap-2 text-sm font-medium text-white/60 transition hover:text-cyan-300">
-                  Explore Project
-                  <span>→</span>
-                </button>
+                <p className="mt-4 text-sm leading-7 text-white/60">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
