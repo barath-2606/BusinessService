@@ -1,5 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import strategicPartnerships from "../assets/strategic-partnerships.png";
+import execution from "../assets/strategic.png";
+import designThinking from "../assets/design-thinking.png";
 
 export const OurStory = () => {
   const ref = useRef(null);
@@ -80,8 +83,8 @@ export const OurStory = () => {
           {/* Values */}
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             <div className="group rounded-[28px] border border-[#D4AF37]/10 bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/30 hover:shadow-[0_0_30px_rgba(212,175,55,0.08)]">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/10 bg-[#D4AF37]/5 text-[#D4AF37]">
-                ✦
+              <div className="flex h-12 w-12 items-center justify-center">
+                <img src={designThinking} alt="Strategic Thinking" className="h-12 w-12" />
               </div>
 
               <h3 className="mt-6 text-lg font-bold">
@@ -95,8 +98,8 @@ export const OurStory = () => {
             </div>
 
             <div className="group rounded-[28px] border border-[#D4AF37]/10 bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/30 hover:shadow-[0_0_30px_rgba(212,175,55,0.08)]">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/10 bg-[#D4AF37]/5 text-[#D4AF37]">
-                ✦
+              <div className="flex h-12 w-12 items-center justify-center">
+                <img src={execution} alt="Precision Execution" className="h-12 w-12" />
               </div>
 
               <h3 className="mt-6 text-lg font-bold">
@@ -110,8 +113,8 @@ export const OurStory = () => {
             </div>
 
             <div className="group rounded-[28px] border border-[#D4AF37]/10 bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37]/30 hover:shadow-[0_0_30px_rgba(212,175,55,0.08)]">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/10 bg-[#D4AF37]/5 text-[#D4AF37]">
-                ✦
+              <div className="flex h-12 w-12 items-center justify-center">
+                <img src={strategicPartnerships} alt="Enduring Partnerships" className="h-12 w-12" />
               </div>
 
               <h3 className="mt-6 text-lg font-bold">
