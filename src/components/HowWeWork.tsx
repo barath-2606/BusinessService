@@ -1,5 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import optimization from "../assets/speed-radar.png";
+import execution from "../assets/execution.png";
+import strategy from "../assets/strategy.png";
+import discovery from "../assets/research.png";
 
 export const HowWeWork = () => {
   const ref = useRef(null);
@@ -10,21 +14,25 @@ export const HowWeWork = () => {
       number: "01",
       title: "Discovery",
       desc: "We analyse your business, audience, competitors, and digital ecosystem to uncover opportunities and define priorities.",
+      image: discovery,
     },
     {
       number: "02",
       title: "Strategy",
       desc: "A tailored roadmap is created by combining technology, marketing, automation, and business intelligence into one scalable growth system.",
+      image: strategy,
     },
     {
       number: "03",
       title: "Execution",
       desc: "Our team builds, launches, and optimises digital systems with precision, ensuring quality, consistency, and measurable outcomes.",
+      image: execution,
     },
     {
       number: "04",
       title: "Optimisation",
       desc: "Continuous analysis and refinement ensure sustainable growth, improved performance, and long-term business success.",
+      image: optimization,
     },
   ];
 
@@ -71,8 +79,8 @@ export const HowWeWork = () => {
             </div>
 
             {/* Small Badge */}
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/15 bg-[#D4AF37]/5 text-sm font-semibold text-[#D4AF37]">
-              {step.number}
+            <div className="inline-flex h-12 w-12 items-center justify-center text-sm font-semibold text-[#D4AF37]">
+              <img src={step.image} alt={step.title} className="h-12 w-12" />
             </div>
 
             {/* Content */}

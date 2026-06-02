@@ -14,7 +14,7 @@ export const LandingPage = () => {
       className="relative overflow-hidden bg-black text-white"
     >
       {/* Background Glow */}
-      <div className="absolute left-1/2 top-0 -z-10 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[180px]" />
+      <div className="absolute left-1/2 top-0 -z-10 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[100px] md:h-[500px] md:w-[500px] md:blur-[140px] lg:h-[700px] lg:w-[700px] lg:blur-[180px]" />
 
       <div className="mx-auto grid min-h-[88vh] max-w-[1180px] items-center gap-10 px-6 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-20">
         {/* LEFT */}
