@@ -12,6 +12,14 @@ export const Navbar = () => {
     scheduleConsultation(formUrl);
   };
 
+  const navbarOptions = [
+    "Services",
+    "About",
+    "Portfolio",
+    "Process",
+    "Contact",
+  ];
+
   return (
     <header className="sticky top-0 z-50 border-b border-[#D4AF37]/10 bg-black/80 backdrop-blur-2xl">
       <div className="mx-auto flex h-16 max-w-[1180px] items-center justify-between px-6">
@@ -25,7 +33,7 @@ export const Navbar = () => {
         </div>
 
         <nav className="hidden items-center gap-8 text-[13px] lg:flex">
-          {["Services", "About", "Portfolio", "Process", "Contact"].map((item) => (
+          {navbarOptions.map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -74,37 +82,17 @@ export const Navbar = () => {
       {isOpen && (
         <div className="border-t border-[#D4AF37]/10 bg-[#0d0d0d] lg:hidden">
           <nav className="flex flex-col px-6 py-4">
-            <a
-              href="#services"
-              className="py-3 text-white/70 hover:text-[#D4AF37]"
-              onClick={() => setIsOpen(false)}
-            >
-              Services
-            </a>
-
-            <a
-              href="#story"
-              className="py-3 text-white/70 hover:text-[#D4AF37]"
-              onClick={() => setIsOpen(false)}
-            >
-              Story
-            </a>
-
-            <a
-              href="#portfolio"
-              className="py-3 text-white/70 hover:text-[#D4AF37]"
-              onClick={() => setIsOpen(false)}
-            >
-              Portfolio
-            </a>
-
-            <a
-              href="#contact"
-              className="py-3 text-white/70 hover:text-[#D4AF37]"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </a>
+            {navbarOptions.map((options) => {
+              return (
+                <a
+                  href={`#${options.toLowerCase()}`}
+                  className="py-3 text-white/70 hover:text-[#D4AF37]"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {options}
+                </a>
+              );
+            })}
 
             <button
               onClick={() => {
