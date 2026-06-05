@@ -1,9 +1,60 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import instagramIcon from "../assets/instagram.png";
+import linkedinIcon from "../assets/linkedin.png";
+import xIcon from "../assets/twitter.png";
+import portfolioIcon from "../assets/portfolio.png";
+import howWeWorkIcon from "../assets/work.png";
+import servicesIcon from "../assets/customer-service.png";
+import ourStoryIcon from "../assets/reading-book.png";
+import locationIcon from "../assets/map.png";
+import phoneIcon from "../assets/contact-information.png";
+import emailIcon from "../assets/communication.png";
 
 export const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px" });
+  const mobileNumber = import.meta.env.VITE_CONFIG_MOBILE_NUMBER;
+  const email = import.meta.env.VITE_CONFIG_EMAIL;
+  const instagram = `https://www.instagram.com/${import.meta.env.VITE_CONFIG_INSTAGRAM_ID}/`;
+
+  const socialLinks = [
+    {
+      icon: linkedinIcon,
+      href: "#",
+    },
+    {
+      icon: instagramIcon,
+      href: instagram,
+    },
+    {
+      icon: xIcon,
+      href: "#",
+    },
+  ];
+
+  const navbarOptions = [
+    {
+      name: "Our Story",
+      icon: ourStoryIcon,
+      link: '#story',
+    },
+    {
+      name: "Services",
+      icon: servicesIcon,
+      link: '#services',
+    },
+    {
+      name: "Portfolio",
+      icon: portfolioIcon,
+      link: '#portfolio',
+    }, 
+    {
+      name: "How we work",
+      icon: howWeWorkIcon,
+      link: '#process',
+    }
+  ]
 
   return (
     <motion.footer
@@ -55,18 +106,16 @@ export const Footer = () => {
             </h3>
 
             <ul className="mt-5 space-y-3 text-sm text-white/60">
-              <li>
-                <a href="#story">Our Story</a>
-              </li>
-              <li>
-                <a href="#services">Services</a>
-              </li>
-              <li>
-                <a href="#portfolio">Portfolio</a>
-              </li>
-              <li>
-                <a href="#process">How We Work</a>
-              </li>
+              {navbarOptions.map((option) => {
+                return (
+                  <li key={option.link}>
+                    <div className="flex items-center gap-2">
+                      <img src={option.icon} alt={option.name} className="w-5 h-5" />
+                      <a href={option.link}>{option.name}</a>
+                    </div>
+                  </li>
+                )
+              })}
             </ul>
           </div>
 
@@ -77,32 +126,34 @@ export const Footer = () => {
             </h3>
 
             <div className="mt-5 space-y-3 text-sm text-white/60">
-              <p>hello@eryxion.com</p>
-              <p>+91 XXXXX XXXXX</p>
-              <p>Tamil Nadu, India</p>
+              <div className="flex items-center gap-2">
+                <img src={emailIcon} alt="Email" className="w-5 h-5" />
+                <p>{email}</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <img src={phoneIcon} alt="Phone" className="w-5 h-5" />
+                <p>+91 {mobileNumber}</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <img src={locationIcon} alt="Location" className="w-5 h-5" />
+                <p>Tamil Nadu, India</p>
+              </div>
             </div>
 
             <div className="mt-8 flex gap-4">
-              <a
-                href="#"
-                className="transition hover:text-[#D4AF37]"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="#"
-                className="transition hover:text-[#D4AF37]"
-              >
-                Instagram
-              </a>
-
-              <a
-                href="#"
-                className="transition hover:text-[#D4AF37]"
-              >
-                X
-              </a>
+              {socialLinks.map((links)=> {
+                return (
+                  <a
+                    key={links.href}
+                    href={links.href}
+                    className="transition hover:text-[#D4AF37]"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={links.icon} alt={links.href} className="w-6 h-6" />
+                  </a>
+                )
+              })}
             </div>
           </div>
         </div>
