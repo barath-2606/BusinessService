@@ -4,6 +4,17 @@ import { useRef } from "react";
 export const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px" });
+  const email = import.meta.env.VITE_CONFIG_EMAIL;
+  const mobileNumber = import.meta.env.VITE_CONFIG_MOBILE_NUMBER;
+  const formUrl = import.meta.env.VITE_CONFIG_FORM_URL;
+
+  const scheduleMeeting = () => {
+    window.open(formUrl, '_blank')
+  }
+
+  const navigateToGmail = () => {
+    window.location.href = `mailto:${email}?subject=Consultation Request`;
+  }
 
   return (
     <motion.section
@@ -41,7 +52,7 @@ export const Contact = () => {
               </p>
 
               <p className="mt-4 text-white/80">
-                hello@eryxion.com
+                {email}
               </p>
             </div>
 
@@ -51,7 +62,7 @@ export const Contact = () => {
               </p>
 
               <p className="mt-4 text-white/80">
-                +91 XXXXX XXXXX
+                +91 {mobileNumber}
               </p>
             </div>
 
@@ -68,12 +79,12 @@ export const Contact = () => {
 
           {/* CTA Buttons */}
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <button className="rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:scale-105">
+            <button className="rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:scale-105 cursor-pointer" onClick={scheduleMeeting}>
               Schedule Consultation
             </button>
 
-            <button className="rounded-full border border-[#D4AF37]/20 bg-transparent px-8 py-4 text-sm font-medium text-[#D4AF37] transition-all duration-300 hover:border-[#D4AF37]/50">
-              hello@eryxion.com
+            <button className="rounded-full border border-[#D4AF37]/20 bg-transparent px-8 py-4 text-sm font-medium text-[#D4AF37] transition-all duration-300 hover:border-[#D4AF37]/50 cursor-pointer" onClick={navigateToGmail}>
+              {email}
             </button>
           </div>
         </div>
