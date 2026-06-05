@@ -44,8 +44,6 @@ export const Portfolio = () => {
       transition={{ duration: 0.7 }}
       className="relative mx-auto max-w-7xl px-6 py-24"
     >
-      {/* Gold Glow */}
-      <div className="absolute right-0 top-0 -z-10 h-[350px] w-[350px] rounded-full bg-[#D4AF37]/10 blur-[140px]" />
 
       {/* Header */}
       <div className="mb-14">

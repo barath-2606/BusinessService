@@ -45,8 +45,6 @@ export const HowWeWork = () => {
       transition={{ duration: 0.7 }}
       className="relative mx-auto max-w-7xl px-6 py-24"
     >
-      {/* Gold Glow */}
-      <div className="absolute left-1/2 top-0 -z-10 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[180px]" />
 
       {/* Header */}
       <div className="mx-auto max-w-3xl text-center">
