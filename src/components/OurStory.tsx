@@ -17,8 +17,6 @@ export const OurStory = () => {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="relative mx-auto max-w-7xl px-6 py-24"
     >
-      {/* Luxury Glow */}
-      <div className="absolute left-1/2 top-0 -z-10 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[160px]" />
 
       <div className="grid items-start gap-16 lg:grid-cols-[0.9fr_1.1fr]">
         {/* LEFT */}

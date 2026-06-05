@@ -14,8 +14,6 @@ export const Contact = () => {
       transition={{ duration: 0.7 }}
       className="relative mx-auto max-w-7xl px-6 py-24"
     >
-      {/* Gold Glow */}
-      <div className="absolute left-1/2 top-0 -z-10 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[180px]" />
 
       <div className="overflow-hidden rounded-[36px] border border-[#D4AF37]/10 bg-[#111111] p-10 lg:p-16">
         <div className="mx-auto max-w-4xl text-center">

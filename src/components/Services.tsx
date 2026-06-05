@@ -59,8 +59,6 @@ export const Services = () => {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="relative mx-auto max-w-[1180px] px-6 py-20 lg:py-28"
     >
-      {/* Background Glow */}
-      <div className="absolute left-1/2 top-20 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#D4AF37]/5 blur-[140px]" />
 
       {/* Heading */}
       <div className="max-w-3xl">
