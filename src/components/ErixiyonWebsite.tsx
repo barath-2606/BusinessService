@@ -1,4 +1,5 @@
 import { Contact } from "./Contact";
+import FloatingLogo from "./FloatingLogo";
 import { Footer } from "./Footer";
 import { HowWeWork } from "./HowWeWork";
 import { LandingPage } from "./LandingPage";
@@ -20,6 +21,8 @@ export default function EryxionWebsite() {
 
       {/* Navigation */}
       <Navbar />
+
+      <FloatingLogo />
 
       {/* Hero */}
       <LandingPage />

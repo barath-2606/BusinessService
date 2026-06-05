@@ -17,11 +17,12 @@ export const Footer = () => {
   const mobileNumber = import.meta.env.VITE_CONFIG_MOBILE_NUMBER;
   const email = import.meta.env.VITE_CONFIG_EMAIL;
   const instagram = `https://www.instagram.com/${import.meta.env.VITE_CONFIG_INSTAGRAM_ID}/`;
+  const linkedInUrl = import.meta.env.VITE_CONFIG_LINKEDIN_URL
 
   const socialLinks = [
     {
       icon: linkedinIcon,
-      href: "#",
+      href: linkedInUrl,
     },
     {
       icon: instagramIcon,
@@ -35,25 +36,25 @@ export const Footer = () => {
 
   const navbarOptions = [
     {
-      name: "Our Story",
-      icon: ourStoryIcon,
-      link: '#story',
-    },
-    {
       name: "Services",
       icon: servicesIcon,
       link: '#services',
+    },
+    {
+      name: "About",
+      icon: ourStoryIcon,
+      link: '#about',
+    },
+    {
+      name: "Process",
+      icon: howWeWorkIcon,
+      link: '#process',
     },
     {
       name: "Portfolio",
       icon: portfolioIcon,
       link: '#portfolio',
     }, 
-    {
-      name: "How we work",
-      icon: howWeWorkIcon,
-      link: '#process',
-    }
   ]
 
   return (

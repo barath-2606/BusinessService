@@ -11,7 +11,7 @@ export const OurStory = () => {
   return (
     <motion.section
       ref={ref}
-      id="story"
+      id="about"
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.7, ease: "easeOut" }}

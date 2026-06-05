@@ -48,7 +48,7 @@ export const LandingPage = () => {
           </p>
 
           {/* CTA */}
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          {/* <div className="mt-10 flex flex-wrap items-center gap-4">
             <button className="rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-semibold text-black transition duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(212,175,55,0.45)]">
               Start Your Project
             </button>
@@ -56,10 +56,10 @@ export const LandingPage = () => {
             <button className="rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-7 py-3 text-sm font-medium text-[#D4AF37] transition hover:bg-[#D4AF37]/10">
               Explore Services
             </button>
-          </div>
+          </div> */}
 
           {/* Stats */}
-          <div className="mt-14 flex flex-wrap gap-10 border-t border-[#D4AF37]/10 pt-8">
+          <div className="mt-10 flex flex-wrap gap-10 border-t border-[#D4AF37]/10 pt-8">
             {[
               {
                 value: "120+",
