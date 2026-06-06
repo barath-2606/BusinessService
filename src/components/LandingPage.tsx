@@ -14,7 +14,7 @@ export const LandingPage = () => {
       className="relative overflow-hidden bg-black text-white"
     >
 
-      <div className="mx-auto grid min-h-[88vh] max-w-[1180px] items-center gap-10 px-6 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-20">
+      <div className="mx-auto grid min-h-[88vh] max-w-7xl items-center gap-10 px-6 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-20">
         {/* LEFT */}
         <div className="relative z-10">
           {/* Badge */}

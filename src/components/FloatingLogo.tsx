@@ -1,6 +1,11 @@
 import whatsapp from "../assets/whatsapp.png";
 
 const FloatingLogo = () => {
+  const whatsAppNumber = import.meta.env.VITE_CONFIG_WHATSAPP_NUMBER
+  const openWhatsapp = () => {
+    window.open(`https://wa.me/${whatsAppNumber}`, "_blank");
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-50">
       {/* Outer Glow */}
@@ -33,6 +38,7 @@ const FloatingLogo = () => {
           src={whatsapp}
           alt="WhatsApp"
           className="h-10 w-10 object-contain"
+          onClick={openWhatsapp}
         />
       </button>
     </div>
