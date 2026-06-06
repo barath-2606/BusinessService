@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { scheduleConsultation } from "./utils";
 import logo from "../assets/EryxionLogo.jpeg";
+import { motion } from "framer-motion";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,12 @@ export const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-3">
           {/* <div className="h-2.5 w-2.5 rounded-full bg-[#D4AF37] shadow-[0_0_25px_rgba(212,175,55,0.8)]" /> */}
-          <img src={logo} className="h-12 w-12" alt="" />
+          <motion.img
+            layoutId="eryxion-logo"
+            src={logo}
+            className="h-12 w-12"
+            alt="Eryxion"
+          />
           <h1 className="text-sm font-semibold uppercase tracking-[0.35em] text-[#D4AF37]">
             Eryxion
           </h1>
